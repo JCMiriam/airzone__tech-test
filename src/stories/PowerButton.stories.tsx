@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { PowerButton } from '../components/PowerButton/PowerButton';
-import type { PowerButtonProps } from '../components/PowerButton/PowerButton.types';
+import { PowerButton } from '@/components/PowerButton/PowerButton';
+import type { PowerButtonProps } from '@/components/PowerButton/PowerButton.types';
 import type { Meta, StoryFn } from '@storybook/react';
 
 const meta: Meta<typeof PowerButton> = {
