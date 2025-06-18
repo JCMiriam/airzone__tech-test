@@ -1,5 +1,5 @@
 export interface PowerButtonProps {
     isOn: boolean;
-    onToggle: () => void;
+    onToggle: (e: React.MouseEvent<HTMLButtonElement>) => void;
     className?: string;
 }
