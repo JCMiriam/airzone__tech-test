@@ -1,6 +1,6 @@
+export type ZoneStatus = 'cooling' | 'heating' | 'success';
 export interface TemperatureDisplayProps {
-    current: number;
-    target?: number;
-    isHeating?: boolean;
-    isCooling?: boolean;
+    currentTemperature: number;
+    targetTemperature?: number;
+    zoneStatus: ZoneStatus;
 }

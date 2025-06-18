@@ -2,23 +2,21 @@ import React from 'react';
 import type { TemperatureDisplayProps } from './TemperatureDisplay.types';
 
 export const TemperatureDisplay: React.FC<TemperatureDisplayProps> = ({
-    current,
-    target,
-    isHeating = false,
-    isCooling = false,
+    currentTemperature,
+    targetTemperature,
+    zoneStatus
 }) => {
-    const hasTarget = typeof target === 'number' && (isHeating || isCooling);
-
     const renderStatus = () => {
-        if (isHeating) return `Heating to ${target}º`;
-        if (isCooling) return `Cooling to ${target}º`;
+        if (zoneStatus === 'heating') return `Heating to ${targetTemperature}º`;
+        if (zoneStatus === 'cooling') return `Cooling to ${targetTemperature}º`;
+        if (zoneStatus === 'success') return `Success`;
         return null;
     };
 
     return (
         <div>
-            {hasTarget && <div>{renderStatus()}</div>}
-            <div>{current.toFixed(1)} ºC</div>
+            <div>{renderStatus()}</div>
+            <div>{currentTemperature.toFixed(1)} ºC</div>
         </div>
     );
 };

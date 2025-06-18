@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TemperatureDisplay } from '@/components/TemperatureDisplay/TemperatureDisplay';
 
 const meta: Meta<typeof TemperatureDisplay> = {
-  title: 'Components/TemperatureDisplay',
-  component: TemperatureDisplay,
-  tags: ['autodocs'],
+    title: 'Components/TemperatureDisplay',
+    component: TemperatureDisplay,
+    tags: ['autodocs'],
 };
 
 export default meta;
@@ -13,29 +13,31 @@ type Story = StoryObj<typeof TemperatureDisplay>;
 
 export const Default: Story = {
     args: {
-        current: 22.5,
+        currentTemperature: 22.5,
+        zoneStatus: 'success',
     },
 };
 
 export const Heating: Story = {
     args: {
-        current: 20,
-        target: 24,
-        isHeating: true,
+        currentTemperature: 20,
+        targetTemperature: 24,
+        zoneStatus: 'heating',
     },
 };
 
 export const Cooling: Story = {
     args: {
-        current: 26,
-        target: 22,
-        isCooling: true,
+        currentTemperature: 26,
+        targetTemperature: 22,
+        zoneStatus: 'cooling',
     },
 };
 
-export const IdleWithTarget: Story = {
+export const Success: Story = {
     args: {
-        current: 23,
-        target: 24,
+        currentTemperature: 23,
+        targetTemperature: 23,
+        zoneStatus: 'success',
     },
 };
