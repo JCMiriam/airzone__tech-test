@@ -1,6 +1,5 @@
 import React from 'react';
 
-// ✅ Define el mock ANTES de los jest.mock()
 const MockSvgIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg role="img" {...props} />
 );
