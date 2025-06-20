@@ -5,44 +5,56 @@ import { TemperatureDisplay } from './TemperatureDisplay';
 describe('TemperatureDisplay', () => {
     it('renders current temperature', () => {
         render(
-            <TemperatureDisplay
-                currentTemperature={21.3}
-                zoneStatus="success"
-            />
+        <TemperatureDisplay
+            currentTemperature={21.3}
+            isOn={true}
+            targetTemperature={21.3}
+        />
         );
         expect(screen.getByText('21.3 ºC')).toBeInTheDocument();
     });
 
-    it('shows heating status when zoneStatus is "heating"', () => {
+    it('shows heating status when isOn is true and current < target', () => {
         render(
-            <TemperatureDisplay
-                currentTemperature={20}
-                targetTemperature={24}
-                zoneStatus="heating"
-            />
+        <TemperatureDisplay
+            currentTemperature={20}
+            targetTemperature={24}
+            isOn={true}
+        />
         );
         expect(screen.getByText('Heating to 24º')).toBeInTheDocument();
     });
 
-    it('shows cooling status when zoneStatus is "cooling"', () => {
+    it('shows cooling status when isOn is true and current > target', () => {
         render(
-            <TemperatureDisplay
-                currentTemperature={26}
-                targetTemperature={22}
-                zoneStatus="cooling"
-            />
+        <TemperatureDisplay
+            currentTemperature={26}
+            targetTemperature={22}
+            isOn={true}
+        />
         );
         expect(screen.getByText('Cooling to 22º')).toBeInTheDocument();
     });
 
-    it('shows success status when zoneStatus is "success"', () => {
+    it('shows success when isOn is true and current === target', () => {
         render(
-            <TemperatureDisplay
-                currentTemperature={23}
-                targetTemperature={23}
-                zoneStatus="success"
-            />
+        <TemperatureDisplay
+            currentTemperature={23}
+            targetTemperature={23}
+            isOn={true}
+        />
         );
         expect(screen.getByText('Success')).toBeInTheDocument();
+    });
+
+    it('shows no status when isOn is false', () => {
+        render(
+        <TemperatureDisplay
+            currentTemperature={23}
+            targetTemperature={25}
+            isOn={false}
+        />
+        );
+        expect(screen.queryByText(/Heating|Cooling|Success/)).not.toBeInTheDocument();
     });
 });
