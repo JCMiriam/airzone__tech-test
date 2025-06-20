@@ -1,0 +1,16 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+
+.powerButton {
+    cursor: pointer;
+
+    .iconOn {
+        color: var(--white);
+        opacity: $opacity-70;
+    }
+
+    .iconOff {
+        color: var(--medium-gray);
+        opacity: $opacity-40;
+    }
+}

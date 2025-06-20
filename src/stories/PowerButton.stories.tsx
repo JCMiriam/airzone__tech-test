@@ -22,14 +22,3 @@ export const Playground = Template.bind({});
 Playground.args = {
   isOn: false
 };
-
-export const OnOffGallery = () => {
-  const [isOn, setIsOn] = useState(true);
-  return (
-    <div style={{ display: 'flex', gap: '1rem' }}>
-      <PowerButton isOn={true} onToggle={() => {}} />
-      <PowerButton isOn={false} onToggle={() => {}} />
-      <PowerButton isOn={isOn} onToggle={() => setIsOn(!isOn)} />
-    </div>
-  );
-};
