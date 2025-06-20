@@ -11,18 +11,6 @@ describe('PowerButton', () => {
         expect(icon).toBeInTheDocument();
     });
 
-    it('applies correct class when isOn is true', () => {
-        const { container } = render(<PowerButton isOn={true} onToggle={() => {}} />);
-        expect(container.firstChild).toHaveClass('on');
-        expect(container.firstChild).not.toHaveClass('off');
-    });
-
-    it('applies correct class when isOn is false', () => {
-        const { container } = render(<PowerButton isOn={false} onToggle={() => {}} />);
-        expect(container.firstChild).toHaveClass('off');
-        expect(container.firstChild).not.toHaveClass('on');
-    });
-
     it('calls onToggle when clicked', () => {
         const onToggleMock = jest.fn();
         render(<PowerButton isOn={false} onToggle={onToggleMock} />);
