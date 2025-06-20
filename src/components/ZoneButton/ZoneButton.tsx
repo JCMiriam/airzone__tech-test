@@ -10,7 +10,6 @@ export const ZoneButton: React.FC<ZoneButtonProps> = ({
     isOn,
     currentTemperature,
     targetTemperature,
-    zoneStatus = 'success',
     onToggle,
     onClick
 }) => {
@@ -31,15 +30,15 @@ export const ZoneButton: React.FC<ZoneButtonProps> = ({
         >
             <div>
                 <TemperatureDisplay
+                    isOn={isOn}
                     currentTemperature={currentTemperature}
                     targetTemperature={targetTemperature}
-                    zoneStatus={zoneStatus}
                 />
                 <PowerButton
                     isOn={isOn}
                     onToggle={(e: React.MouseEvent<HTMLButtonElement>) => {
                         e.stopPropagation();
-                        onToggle(e)
+                        onToggle(e);
                     }}
                     aria-label={isOn ? 'Turn off' : 'Turn on'}
                 />
