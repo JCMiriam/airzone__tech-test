@@ -23,7 +23,7 @@ const icons: Record<IconName, React.FC<React.SVGProps<SVGSVGElement>>> = {
     sunrise: SunriseIcon,
 };
 
-export const Icon: React.FC<IconProps> = ({ name, width, height }) => {
+export const Icon: React.FC<IconProps> = ({ name, width, height, className }) => {
     const SvgIcon = icons[name];
 
     if (!SvgIcon) return null;
@@ -32,6 +32,8 @@ export const Icon: React.FC<IconProps> = ({ name, width, height }) => {
         <SvgIcon
             width={width}
             height={height}
+            className={ className }
+            data-testid="svg-icon"
         />
     );
 };
