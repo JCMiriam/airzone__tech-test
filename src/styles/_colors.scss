@@ -11,7 +11,7 @@
     --green: #2DCC9A;
     --dark-green: #01644F;
 
-    --heating-gradient: radial-gradient(0% 100%, var(--orange) 0%, var(--red) 100%);
-    --cooling-gradient: radial-gradient(0% 100%, var(--light-blue) 0%, var(--dark-blue) 100%);
-    --success-gradient:  radial-gradient(3% 99%, var(--green) 0%, var(--dark-green) 100%);
+    --heating-gradient: radial-gradient(circle at bottom, var(--orange), var(--red));
+    --cooling-gradient: radial-gradient(circle at bottom, var(--light-blue), var(--dark-blue));
+    --success-gradient: radial-gradient(circle at bottom, var(--green), var(--dark-green));
 }
