@@ -3,6 +3,13 @@
 
 .powerButton {
     cursor: pointer;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -17px;
+    margin-right: -13px;
 
     .iconOn {
         color: var(--white);
