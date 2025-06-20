@@ -1,12 +1,10 @@
 import React from 'react';
-import styles from './PowerButton.module.sass';
 import type { PowerButtonProps } from './PowerButton.types';
 import { Icon } from '@/ui/components/IconComponent/Icon';
 
-export const PowerButton: React.FC<PowerButtonProps> = ({ isOn, onToggle, className }) => {
+export const PowerButton: React.FC<PowerButtonProps> = ({ isOn, onToggle }) => {
     return (
         <button
-            className={`${styles.button} ${isOn ? styles.on : styles.off} ${className || ''}`}
             onClick={onToggle}
             aria-label={isOn ? 'Turn off' : 'Turn on'}
         >
