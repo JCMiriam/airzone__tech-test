@@ -1,0 +1,17 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+
+.temperatureDisplay {
+    font-size: 33px;
+    color: var(--medium-gray);
+    color: var(--white);
+    font-weight: 500;
+}
+
+.temperatureDisplayOn {
+    color: var(--white);
+}
+
+.temperatureDisplayOff {
+    color: var(--medium-gray);
+}
