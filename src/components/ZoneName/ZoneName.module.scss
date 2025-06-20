@@ -1,0 +1,15 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+
+.zoneName {
+    font-size: 16px;
+    font-weight: 500;;
+}
+
+.zoneNameOn {
+    color: var(--white);
+}
+
+.zoneNameOff {
+    color: var(--dark-gray);
+}
