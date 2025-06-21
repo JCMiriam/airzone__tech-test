@@ -10,8 +10,6 @@ export const ZoneStatus: React.FC<ZoneStatusProps> = ({ status, targetTemperatur
 
     let content: string;
 
-    console.log('zoneStatus class:', className);
-
     switch (status) {
         case 'heating':
             content = `Heating to ${targetTemperature}º`;

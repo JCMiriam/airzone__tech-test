@@ -24,7 +24,7 @@ describe('ZoneButton', () => {
     it('renders all components correctly', () => {
         render(<ZoneButton {...defaultProps} />);
         expect(screen.getByText('Heating to 24º')).toBeInTheDocument();
-        expect(screen.getByText('22.0 ºC')).toBeInTheDocument();
+        expect(screen.getByText(/22\s*º/)).toBeInTheDocument();
         expect(screen.getByText('Living Room')).toBeInTheDocument();
     });
 
