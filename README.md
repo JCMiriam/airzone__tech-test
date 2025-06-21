@@ -17,7 +17,7 @@
 
 ### Clonar proyecto
   ```bash
-  git clone [http://localhost:5173/](https://github.com/JCMiriam/airzone__tech-test.git)
+  git clone https://github.com/JCMiriam/airzone__tech-test.git
   ```
 
 ### Instalar dependencias
