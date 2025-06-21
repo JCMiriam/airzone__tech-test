@@ -17,11 +17,11 @@
 
 ### Clonar proyecto
   ```bash
-  git clone [http://localhost:5173/](https://github.com/JCMiriam/airzone__tech-test.git)
+  git clone https://github.com/JCMiriam/airzone__tech-test.git
   ```
 
 ### Instalar dependencias
-  📝 Requiere tener instalado pnpm y Node.js v18+
+  📝 Requiere el uso de npm
   ```bash
   npm install
   ```
