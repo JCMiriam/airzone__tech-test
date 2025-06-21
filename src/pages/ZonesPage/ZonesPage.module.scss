@@ -1,7 +1,23 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+@use '@/styles/breakpoints' as *;
+
 .zonesPage {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: var(--light-gray);
+    padding-top: 50px;
+
+    .zonesTitle {
+        padding: 0 15px;
+
+        @include respond-up(sm) {
+            padding: 0 30px;
+        }
+
+        .zonesTitle__text {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark-gray)
+        }
+    }
 }
