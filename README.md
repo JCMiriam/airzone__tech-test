@@ -1,54 +1,68 @@
-# React + TypeScript + Vite
+# 🌬️ Airzone Botón de Zona - Prueba técnica
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## ⚙️ Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ⚛️ React + Vite
+- 🧠 TypeScript
+- 🎨 SASS (CSS modules)
+- 🌀 Animaciones SVG
+- 🧪 Vitest + Testing Library
+- 📚 Storybook
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Instalación del proyecto
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Clonar proyecto
+  ```bash
+  git clone [http://localhost:5173/](https://github.com/JCMiriam/airzone__tech-test.git)
+  ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Instalar dependencias
+  📝 Requiere tener instalado pnpm y Node.js v18+
+  ```bash
+  npm install
+  ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Ejecutar en local
+  ```bash
+  npm run dev
+  ```
+  Podrás verlo en [http://localhost:5173/](http://localhost:5173/)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 📦 Estructura del proyecto
+  ```bash
+  ├── _mocks_ # Mocks para testing
+  └── src/
+      ├── assets/ # Archivos necesarios para el proyecto, como imágenes o iconos
+      ├── components/ # Componentes específicos reutilizables en el proyecto, incluye sus estilos, tipados, hooks y test en la carpeta de cada componente
+      ├── data/ # Datos mockeados de zonas y escenas en formato json
+      ├── pages/ # Páginas de la aplicación, donde se crea el layout completo usando todos los componentes necesarios
+      ├── stories/ # Storybook con la documentación de cada uno de los componentes
+      ├── styles/ # Estilos comunes, incluyendo colores, variables, breackpoints o mixins
+      ├── types/ # Tipos comunes o globales, reutilizables en varios componentes. Los tipos específicos se incluirán en la carpeta del propio componente
+      └── ui/ # Estilos comunes, incluyendo colores, variables, breackpoints o mixins 
+          └── components/ # Componentes comunes, como iconos, botones generales, textos, enlaces, etc.
+  ```
+
+---
+
+## 🧪 Ejecutar Tests
+  ```bash
+  npm run test
+  ```
+
+---
+
+## 🖼️ Storybook
+  ```bash
+  npm run storybook
+  ```
+
+  Para ver los componentes y sus estados visualmente en [http://localhost:6006/](http://localhost:6006/).
+
+  
