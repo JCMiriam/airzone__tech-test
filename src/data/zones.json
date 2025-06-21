@@ -26,5 +26,19 @@
         "isOn": true,
         "currentTemperature": 22,
         "targetTemperature": 24
+    },
+    {
+        "id": "0004",
+        "zoneName": "Bathroom",
+        "isOn": false,
+        "currentTemperature": 26,
+        "targetTemperature": 26
+    },
+    {
+        "id": "0005",
+        "zoneName": "Office",
+        "isOn": true,
+        "currentTemperature": 26,
+        "targetTemperature": 26
     }
 ]

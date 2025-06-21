@@ -1,4 +1,4 @@
-import { ZonesPage } from './pages/ZonesPage';
+import ZonesPage from "./pages/ZonesPage/ZonesPage";
 
 function App() {
   return <ZonesPage />;
