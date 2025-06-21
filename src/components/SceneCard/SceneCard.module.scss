@@ -1,0 +1,8 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+
+
+.styles.sceneCard {
+    background-color: var(--white);
+    border-radius: var($base-border-radius);
+}

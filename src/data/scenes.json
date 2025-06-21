@@ -1,0 +1,7 @@
+[
+    { "icon": "sofa", "name": "Back home" },
+    { "icon": "sunrise", "name": "Morning" },
+    { "icon": "bag", "name": "I'm out" },
+    { "icon": "leaving", "name": "Traveling" },
+    { "icon": "night", "name": "Night" }
+]
