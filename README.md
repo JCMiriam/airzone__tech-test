@@ -8,7 +8,7 @@
 - 🧠 TypeScript
 - 🎨 SASS (CSS modules)
 - 🌀 Animaciones SVG
-- 🧪 Vitest + Testing Library
+- 🧪 Jest + React Testing Library
 - 📚 Storybook
 
 ---
