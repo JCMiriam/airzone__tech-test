@@ -1,0 +1,44 @@
+[
+    {
+        "id": "0000",
+        "zoneName": "Living Room",
+        "isOn": false,
+        "currentTemperature": 28,
+        "targetTemperature": 28
+    },
+    {
+        "id": "0001",
+        "zoneName": "Kitchen",
+        "isOn": true,
+        "currentTemperature": 22,
+        "targetTemperature": 22
+    },
+    {
+        "id": "0002",
+        "zoneName": "Bedroom 1",
+        "isOn": true,
+        "currentTemperature": 24,
+        "targetTemperature": 22
+    },
+    {
+        "id": "0003",
+        "zoneName": "Bedroom 2",
+        "isOn": true,
+        "currentTemperature": 22,
+        "targetTemperature": 24
+    },
+    {
+        "id": "0004",
+        "zoneName": "Bathroom",
+        "isOn": false,
+        "currentTemperature": 26,
+        "targetTemperature": 26
+    },
+    {
+        "id": "0005",
+        "zoneName": "Office",
+        "isOn": true,
+        "currentTemperature": 26,
+        "targetTemperature": 26
+    }
+]

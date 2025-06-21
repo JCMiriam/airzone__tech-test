@@ -1,0 +1,63 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+
+@keyframes slowSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.zoneButton {
+    position: relative;
+    height: 130px;
+    padding: 17px 13px;
+    border-radius: $base-border-radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &--off {
+        background: var(--white);
+        box-shadow: $secondary-box-shadow;
+
+        .zoneButton__powerButton {
+            opacity: 0.75;
+        }
+    }
+
+    &--success {
+        background: var(--success-gradient);
+        box-shadow: $primary-box-shadow;
+    }
+
+    &--cooling {
+        background: var(--cooling-gradient);
+        box-shadow: $primary-box-shadow;
+    }
+
+    &--heating {
+        background: var(--heating-gradient);
+        box-shadow: $primary-box-shadow;
+    }
+
+    .zoneButton__topSection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .zoneButton__backgroundIcon {
+        opacity: $opacity-08;
+        color: var(--white);
+        position: absolute;
+        bottom: -32px;
+        right: -46px;
+        animation: slowSpin 12s linear infinite;
+        pointer-events: none;
+    }
+}
+

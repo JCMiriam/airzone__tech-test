@@ -7,10 +7,30 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Build output
 node_modules
 dist
 dist-ssr
+build
+.storybook-out
+storybook-static
+
+# Vite
+.vite
 *.local
+
+# Testing
+coverage
+*.lcov
+
+# TypeScript
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Environment files
+.env
+.env.local
+.env.*.local
 
 # Editor directories and files
 .vscode/*
@@ -23,5 +43,14 @@ dist-ssr
 *.sln
 *.sw?
 
+# Storybook
 *storybook.log
-storybook-static
+
+# Jest
+jest.config.ts
+
+# ESLint & Prettier cache
+.eslintcache
+
+# Mac system files
+._*

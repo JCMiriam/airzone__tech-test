@@ -1,0 +1,18 @@
+:root {
+    --dark-gray: #1F2933;
+    --medium-gray: #7B8794;
+    --mid-light-gray: #9AA7B1;
+    --light-gray: #EBF0F5;
+    --white: #FFFFFF;
+    
+    --orange: #EF694E;
+    --red: #CF1E11;
+    --light-blue: #40C3F7;
+    --dark-blue: #0B69A3;
+    --green: #2DCC9A;
+    --dark-green: #01644F;
+  
+    --heating-gradient: radial-gradient(circle at 3% 3%, var(--orange) 0%, var(--red) 100%);
+    --cooling-gradient: radial-gradient(circle at 3% 3%, var(--light-blue) 0%, var(--dark-blue) 100%);
+    --success-gradient: radial-gradient(circle at 3% 3%, var(--green) 0%, var(--dark-green) 100%);
+}

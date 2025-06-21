@@ -1,0 +1,17 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+
+.zoneStatus {
+    font-size: 13px;
+}
+
+.zoneStatusOn {
+    color: var(--white);
+    opacity: $opacity-80;
+}
+
+.zoneStatusOff {
+    color: var(--medium-gray);
+    opacity: $opacity-80;
+    text-transform: uppercase;
+}
