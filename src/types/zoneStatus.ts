@@ -1,0 +1,1 @@
+export type ZoneStatus = 'cooling' | 'heating' | 'success' | 'off';
