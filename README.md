@@ -21,7 +21,7 @@
   ```
 
 ### Instalar dependencias
-  📝 Requiere tener instalado pnpm y Node.js v18+
+  📝 Requiere el uso de npm
   ```bash
   npm install
   ```
