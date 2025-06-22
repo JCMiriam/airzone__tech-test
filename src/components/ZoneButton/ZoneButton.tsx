@@ -5,7 +5,7 @@ import { ZoneName } from '@/components/ZoneName/ZoneName';
 import { TemperatureDisplay } from '@/components/TemperatureDisplay/TemperatureDisplay';
 import { PowerButton } from '@/components/PowerButton/PowerButton';
 import { ZoneStatus } from '@/components/ZoneStatus/ZoneStatus';
-import { Icon } from '@/ui/components/IconComponent/Icon';
+import { ZoneBackground } from '../ZoneBackground/ZoneBackground';
 import { useZoneStatus } from '@/components/ZoneStatus/useZoneStatus';
 
 import styles from './ZoneButton.module.scss';
@@ -37,18 +37,12 @@ export const ZoneButton: React.FC<ZoneButtonProps> = ({
             onKeyDown={handleKeyDown}
             data-testid="zone-button"
             className={`${styles.zoneButton} ${statusClass}`}
-            >
-            {(zoneStatus === 'heating' || zoneStatus === 'cooling') && (
-                <div className={styles.zoneButton__backgroundIcon} aria-hidden="true">
-                    <Icon
-                        name={zoneStatus === 'heating' ? 'heat' : 'cool'}
-                        width={120}
-                        height={120}
-                        className={styles[`icon--${zoneStatus}`]}
-                    />
-                </div>
-            )}
-
+        >
+            <ZoneBackground
+                isOn={isOn}
+                currentTemperature={currentTemperature}
+                targetTemperature={targetTemperature ?? currentTemperature}
+            />
             <div className={styles.zoneButton__topSection}>
                 <TemperatureDisplay
                     currentTemperature={currentTemperature}
