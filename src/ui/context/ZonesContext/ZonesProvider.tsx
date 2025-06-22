@@ -16,23 +16,30 @@ const zonesData: Zone[] = rawZones.map((z) => ({
 export const ZonesProvider = ({ children }: { children: React.ReactNode }) => {
     const [zones, setZones] = useState<Zone[]>(zonesData);
 
-    const updateZone = (id: string, data: Partial<Omit<Zone, 'status'>>) => {
+    const updateZone = (
+        id: string,
+        data: Partial<Omit<Zone, 'status'>> & { isOn?: boolean }
+    ) => {
         setZones((prev) =>
-        prev.map((zone) => {
-            if (zone.id !== id) return zone;
+            prev.map((zone) => {
+                if (zone.id !== id) return zone;
 
-            const newTemp = data.temperature ?? zone.temperature;
-            const newTarget = data.target ?? zone.target;
-            const isOn = zone.status !== 'off';
+                const newTemp = data.temperature ?? zone.temperature;
+                const newTarget = data.target ?? zone.target;
 
-            return {
-            ...zone,
-            ...data,
-            status: computeStatus(isOn, newTemp, newTarget),
-            };
-        })
+                const isOn =
+                    typeof data.isOn === 'boolean' ? data.isOn : zone.status !== 'off';
+
+                return {
+                    ...zone,
+                    ...data,
+                    status: computeStatus(isOn, newTemp, newTarget),
+                };
+            })
         );
     };
+
+
 
     return (
         <ZonesContext.Provider value={{ zones, updateZone }}>

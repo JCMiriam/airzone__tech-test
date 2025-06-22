@@ -8,7 +8,10 @@ export type Zone = {
     status: ZoneStatus;
 };
 
-export type ZonesContextType = {
+export interface ZonesContextType {
     zones: Zone[];
-    updateZone: (id: string, data: Partial<Omit<Zone, 'status'>>) => void;
-};
+    updateZone: (
+        id: string,
+        data: Partial<Omit<Zone, 'status'>> & { isOn?: boolean } // <-- AÑADIDO
+    ) => void;
+}
