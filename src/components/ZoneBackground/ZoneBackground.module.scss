@@ -1,0 +1,61 @@
+@use '@/styles/variables' as *;
+@use '@/styles/colors' as *;
+
+@keyframes slowSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.zoneBackgroundWrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: $base-border-radius;
+    overflow: hidden;
+}
+
+.zoneBackground {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.zoneBackground.active {
+  opacity: 1;
+}
+
+.success {
+    background: var(--success-gradient);
+    box-shadow: $primary-box-shadow;
+    }
+.cooling {
+    background: var(--cooling-gradient);
+    box-shadow: $primary-box-shadow;
+}
+.heating {
+    background: var(--heating-gradient);
+    box-shadow: $primary-box-shadow;
+}
+.off {
+    background: var(--white);
+    box-shadow: $secondary-box-shadow;
+}
+
+.zoneBackground__icon {
+    position: absolute;
+    bottom: -32px;
+    right: -46px;
+    opacity: $opacity-08;
+    color: var(--white);
+    animation: slowSpin 12s linear infinite;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
