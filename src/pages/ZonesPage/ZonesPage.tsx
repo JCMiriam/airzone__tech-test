@@ -1,5 +1,5 @@
-import { ZonesDashboard } from "@/components/ZonesDashboard/ZonesDashboard";
-import styles from "./ZonesPage.module.scss";
+import { ZonesDashboard } from '@/components/ZonesDashboard/ZonesDashboard';
+import styles from './ZonesPage.module.scss';
 
 const ZonesPage: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const ZonesPage: React.FC = () => {
           <span></span>
         </div>
       </div>
-      
+
       <ZonesDashboard />
     </main>
   );

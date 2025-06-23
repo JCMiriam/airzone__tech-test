@@ -1,6 +1,6 @@
-import type { ZoneStatus } from '@/types/zoneStatus';
+import type { ZoneStatus } from "@/types/zoneStatus";
 
-export const useZoneStatus = (
+export const computeStatus = (
     isOn: boolean,
     current: number,
     target: number

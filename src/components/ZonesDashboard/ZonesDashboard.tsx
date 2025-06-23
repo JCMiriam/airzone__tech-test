@@ -1,40 +1,56 @@
 import React, { useState } from 'react';
-import zonesData from '@/data/zones.json';
 import { ZoneButton } from '@/components/ZoneButton/ZoneButton';
-import type { ZoneData } from './ZonesDashboard.types';
+import { useZones } from '@/ui/context/ZonesContext/useZones';
+import { ZoneDetail } from '@/components/ZoneDetail/ZoneDetail';
+import { AnimatePresence } from 'framer-motion';
 
 import styles from './ZonesDashboard.module.scss';
 
 export const ZonesDashboard: React.FC = () => {
-    const [zones, setZones] = useState<ZoneData[]>(zonesData);
+    const { zones, updateZone } = useZones();
+    const [selectedZoneId, setSelectedZoneId] = useState<string | null>(null);
 
     const handleToggle = (zoneId: string) => {
-        setZones(prevZones =>
-            prevZones.map(zone =>
-                zone.id === zoneId
-                ? { ...zone, isOn: !zone.isOn }
-                : zone
-            )
-        );
+        const zone = zones.find((z) => z.id === zoneId);
+        if (!zone) return;
+
+        const isCurrentlyOn = zone.status !== 'off';
+
+        updateZone(zoneId, {
+            isOn: !isCurrentlyOn,
+            temperature: zone.temperature,
+            target: zone.target,
+        });
     };
 
+
     const handleClick = (zoneId: string) => {
-        console.log(`Zone ${zoneId} clicked`);
+        setSelectedZoneId(zoneId);
     };
 
     return (
         <section className={styles.zonesDashboard}>
-            {zones.map(zone => (
-                <ZoneButton
-                    key={zone.id}
-                    zoneName={zone.zoneName}
-                    isOn={zone.isOn}
-                    currentTemperature={zone.currentTemperature}
-                    targetTemperature={zone.targetTemperature}
-                    onClick={() => handleClick(zone.id)}
-                    onToggle={() => handleToggle(zone.id)}
-                />
-            ))}
+        {zones.map((zone) => (
+            <ZoneButton
+            key={zone.id}
+            zoneName={zone.name}
+            isOn={zone.status !== 'off'}
+            currentTemperature={zone.temperature}
+            targetTemperature={zone.target}
+            onClick={() => handleClick(zone.id)}
+            onToggle={() => handleToggle(zone.id)}
+            />
+        ))}
+
+        <AnimatePresence>
+            {selectedZoneId && (
+            <ZoneDetail
+                key={selectedZoneId} // necesario para la animación
+                zoneId={selectedZoneId}
+                onClose={() => setSelectedZoneId(null)}
+            />
+            )}
+        </AnimatePresence>
         </section>
     );
 };
